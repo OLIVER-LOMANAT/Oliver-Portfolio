@@ -1,4 +1,7 @@
 @import "tailwindcss";
+body{
+    height: 2650px;
+}
 nav ul li{
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
@@ -10,4 +13,23 @@ nav ul li:hover span{
 }
 .intro{
      box-shadow: 0 12px 30px rgba(22, 57, 252, 0.842);
+}
+.skills-content{
+    margin: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.skill-icon{
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.5s ease;
+}
+.skill-icon:hover{
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(22, 57, 252, 0.842)
+}
+form{
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.contact-info{
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
