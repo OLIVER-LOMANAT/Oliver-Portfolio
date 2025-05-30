@@ -1,0 +1,13 @@
+@import "tailwindcss";
+nav ul li{
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+nav ul li:hover i{
+    transform: translateY(-10px);
+}
+nav ul li:hover span{
+    display: block;
+}
+.intro{
+     box-shadow: 0 12px 30px rgba(22, 57, 252, 0.842);
+}
