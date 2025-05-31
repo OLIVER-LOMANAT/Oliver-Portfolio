@@ -186,11 +186,11 @@
   .m-0 {
     margin: calc(var(--spacing) * 0);
   }
-  .m-1 {
-    margin: calc(var(--spacing) * 1);
-  }
   .m-5 {
     margin: calc(var(--spacing) * 5);
+  }
+  .m-8 {
+    margin: calc(var(--spacing) * 8);
   }
   .m-10 {
     margin: calc(var(--spacing) * 10);
@@ -198,11 +198,11 @@
   .m-13 {
     margin: calc(var(--spacing) * 13);
   }
-  .m-30 {
-    margin: calc(var(--spacing) * 30);
-  }
   .mx-90 {
     margin-inline: calc(var(--spacing) * 90);
+  }
+  .mx-auto {
+    margin-inline: auto;
   }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
@@ -210,11 +210,11 @@
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
-  .mt-4 {
-    margin-top: calc(var(--spacing) * 4);
-  }
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
+  }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
   }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
@@ -224,6 +224,9 @@
   }
   .mt-65 {
     margin-top: calc(var(--spacing) * 65);
+  }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
   }
   .ml-3 {
     margin-left: calc(var(--spacing) * 3);
@@ -236,15 +239,6 @@
   }
   .ml-10 {
     margin-left: calc(var(--spacing) * 10);
-  }
-  .ml-15 {
-    margin-left: calc(var(--spacing) * 15);
-  }
-  .ml-18 {
-    margin-left: calc(var(--spacing) * 18);
-  }
-  .ml-19 {
-    margin-left: calc(var(--spacing) * 19);
   }
   .flex {
     display: flex;
@@ -267,9 +261,6 @@
   .w-50 {
     width: calc(var(--spacing) * 50);
   }
-  .w-140 {
-    width: calc(var(--spacing) * 140);
-  }
   .w-150 {
     width: calc(var(--spacing) * 150);
   }
@@ -279,11 +270,20 @@
   .w-full {
     width: 100%;
   }
+  .max-w-\[600px\] {
+    max-width: 600px;
+  }
+  .min-w-\[120px\] {
+    min-width: 120px;
+  }
   .cursor-pointer {
     cursor: pointer;
   }
   .list-none {
     list-style-type: none;
+  }
+  .flex-col {
+    flex-direction: column;
   }
   .flex-wrap {
     flex-wrap: wrap;
@@ -296,6 +296,9 @@
   }
   .justify-evenly {
     justify-content: space-evenly;
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
   }
   .gap-8 {
     gap: calc(var(--spacing) * 8);
@@ -325,8 +328,14 @@
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
   .p-5 {
     padding: calc(var(--spacing) * 5);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
   }
   .pb-1 {
     padding-bottom: calc(var(--spacing) * 1);
@@ -349,6 +358,9 @@
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
+  .text-\[\#0087ca\] {
+    color: #0087ca;
+  }
   .text-\[\#264de4\] {
     color: #264de4;
   }
@@ -366,6 +378,31 @@
   }
   .text-white {
     color: var(--color-white);
+  }
+  .md\:mt-0 {
+    @media (width >= 48rem) {
+      margin-top: calc(var(--spacing) * 0);
+    }
+  }
+  .md\:mr-8 {
+    @media (width >= 48rem) {
+      margin-right: calc(var(--spacing) * 8);
+    }
+  }
+  .md\:mb-0 {
+    @media (width >= 48rem) {
+      margin-bottom: calc(var(--spacing) * 0);
+    }
+  }
+  .md\:ml-8 {
+    @media (width >= 48rem) {
+      margin-left: calc(var(--spacing) * 8);
+    }
+  }
+  .md\:flex-row {
+    @media (width >= 48rem) {
+      flex-direction: row;
+    }
   }
 }
 body {
@@ -404,17 +441,24 @@ nav ul li:hover span {
   box-shadow: 0 12px 30px rgba(22, 57, 252, 0.842);
 }
 .skills-content {
-  margin: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 12px 30px rgba(22, 57, 252, 0.842);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  background: white;
+}
+.skills-content:hover {
+  transform: scale(1.05);
   box-shadow: 0 12px 30px rgba(22, 57, 252, 0.842);
 }
 .skill-icon {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.5s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
 }
 .skill-icon:hover {
   transform: scale(1.1);
-  box-shadow: 0 12px 30px rgba(22, 57, 252, 0.842);
 }
 form {
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -422,6 +466,21 @@ form {
 .contact-info {
   padding: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+@media (max-width: 600px) {
+  .flex.mx-90 {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .contact-info {
+    margin-left: 0;
+  }
+  form {
+    width: 100%;
+  }
+  .w-170 {
+    width: 100%;
+  }
 }
 @property --tw-border-style {
   syntax: "*";

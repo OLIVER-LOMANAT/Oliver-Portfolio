@@ -34,23 +34,49 @@ nav ul li:hover span{
 .intro{
      box-shadow: 0 12px 30px rgba(22, 57, 252, 0.842);
 }
-.skills-content{
-    margin: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+.skills-content {
+    box-shadow: 0 12px 30px rgba(22, 57, 252, 0.842);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    background: white;
+}
+
+.skills-content:hover {
+    transform: scale(1.05);
     box-shadow: 0 12px 30px rgba(22, 57, 252, 0.842);
 }
-.skill-icon{
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.5s ease;
+
+.skill-icon {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
 }
-.skill-icon:hover{
+
+.skill-icon:hover {
     transform: scale(1.1);
-    box-shadow: 0 12px 30px rgba(22, 57, 252, 0.842)
 }
-form{
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+form {
+box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
-.contact-info{
-    padding: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.contact-info {
+padding: 10px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 600px) {
+.flex.mx-90 {
+margin-left: 16px;
+margin-right: 16px;
+}
+.contact-info {
+margin-left: 0;
+}
+form {
+width: 100%;
+}
+.w-170 {
+width: 100%;
+}
 }
