@@ -2,6 +2,26 @@
 body{
     height: 2650px;
 }
+.navlinks ul li a{
+    display: inline-block;
+    position: relative;
+}
+.navlinks ul li a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-in-out;
+}
+.navlinks ul li a:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
 nav ul li{
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
@@ -17,6 +37,7 @@ nav ul li:hover span{
 .skills-content{
     margin: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 30px rgba(22, 57, 252, 0.842);
 }
 .skill-icon{
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);

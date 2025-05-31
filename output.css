@@ -21,8 +21,6 @@
     --text-5xl--line-height: 1;
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
-    --default-transition-duration: 150ms;
-    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -179,15 +177,6 @@
   .relative {
     position: relative;
   }
-  .sticky {
-    position: sticky;
-  }
-  .top-0 {
-    top: calc(var(--spacing) * 0);
-  }
-  .-bottom-2 {
-    bottom: calc(var(--spacing) * -2);
-  }
   .-bottom-2\/4 {
     bottom: calc(calc(2/4 * 100%) * -1);
   }
@@ -202,9 +191,6 @@
   }
   .m-5 {
     margin: calc(var(--spacing) * 5);
-  }
-  .m-8 {
-    margin: calc(var(--spacing) * 8);
   }
   .m-10 {
     margin: calc(var(--spacing) * 10);
@@ -266,9 +252,6 @@
   .hidden {
     display: none;
   }
-  .table {
-    display: table;
-  }
   .h-15 {
     height: calc(var(--spacing) * 15);
   }
@@ -296,17 +279,11 @@
   .w-full {
     width: 100%;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .transform {
-    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-  }
   .cursor-pointer {
     cursor: pointer;
   }
-  .resize {
-    resize: both;
+  .list-none {
+    list-style-type: none;
   }
   .flex-wrap {
     flex-wrap: wrap;
@@ -320,6 +297,9 @@
   .justify-evenly {
     justify-content: space-evenly;
   }
+  .gap-8 {
+    gap: calc(var(--spacing) * 8);
+  }
   .rounded {
     border-radius: 0.25rem;
   }
@@ -331,10 +311,6 @@
   }
   .rounded-xl {
     border-radius: var(--radius-xl);
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
   }
   .border-1 {
     border-style: var(--tw-border-style);
@@ -351,6 +327,9 @@
   }
   .p-5 {
     padding: calc(var(--spacing) * 5);
+  }
+  .pb-1 {
+    padding-bottom: calc(var(--spacing) * 1);
   }
   .text-center {
     text-align: center;
@@ -388,21 +367,29 @@
   .text-white {
     color: var(--color-white);
   }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
-  .transition {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
 }
 body {
   height: 2650px;
+}
+.navlinks ul li a {
+  display: inline-block;
+  position: relative;
+}
+.navlinks ul li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-in-out;
+}
+.navlinks ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 nav ul li {
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -419,6 +406,7 @@ nav ul li:hover span {
 .skills-content {
   margin: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 12px 30px rgba(22, 57, 252, 0.842);
 }
 .skill-icon {
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -435,32 +423,7 @@ form {
   padding: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-@property --tw-rotate-x {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-rotate-y {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-rotate-z {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-skew-x {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-skew-y {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-outline-style {
   syntax: "*";
   inherits: false;
   initial-value: solid;
@@ -468,13 +431,7 @@ form {
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-rotate-x: initial;
-      --tw-rotate-y: initial;
-      --tw-rotate-z: initial;
-      --tw-skew-x: initial;
-      --tw-skew-y: initial;
       --tw-border-style: solid;
-      --tw-outline-style: solid;
     }
   }
 }
